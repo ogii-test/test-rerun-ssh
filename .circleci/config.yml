@@ -23,3 +23,35 @@ jobs:
       - checkout
       - run: echo 0
  
+  job2:
+    executor: test-executor
+    steps:
+      - checkout
+  job3:
+    executor: test-executor
+    steps:
+      - checkout
+  job4:
+    executor: test-executor
+    steps:
+      - checkout
+  job5:
+    executor: test-executor
+    steps:
+      - checkout
+  job6:
+    executor: test-executor
+    steps:
+      - checkout
+
+workflows:
+  workflow1:
+    jobs:
+      - build
+      - job6:
+          requires:
+            - build
+            - job2
+            - job3
+            - job4
+            - job5
