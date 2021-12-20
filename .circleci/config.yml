@@ -19,6 +19,6 @@ executors:
 jobs:
   build:
     executor: test-executor
-  steps:
-    - checkout
-    - run: echo 0
+    steps:
+      - checkout
+      - run: echo 0
