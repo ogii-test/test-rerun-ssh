@@ -49,6 +49,12 @@ workflows:
     jobs:
       - build
       - job2
+      - job3:
+          requires:
+            - job2
+            - build
+      - job4
+      - job5
       - job6:
           requires:
             - build
